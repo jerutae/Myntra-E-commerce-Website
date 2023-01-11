@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myntra Online Shopping</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="website-style.css">
+</head>
+<body>
+    <section id="header">
+        <a href="loginpage.html"><img src="img/myntra-logo.png" class="logo" alt="" style="height: 80px; width: 210px; margin-left: -100px; margin-right: 0px;"></a>
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="e-commerce.html">Home</a></li>
+                <li><a href="e-comshop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="lg-bag"><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+            </ul>
+
+        </div>
+        <div id="mobile">
+            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+<div class="cont-form">
+    <div class="title">Sign up form</div>
+    <form  name="login-google-sheet" method="post">
+
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details">Full Name</span>
+        <input type="text" name="Name" placeholder="Your name" required class="form-input">
+    </div> 
+        <div class="input-box">
+            <span class="details">Contact Number</span>
+        <input type="number" name="Number" placeholder="Contact number" class="form-input">
+    </div>
+ 
+        <div class="input-box">
+             <span class="details">Email Number</span>
+        <input type="email" name="Email ID" placeholder="Type your Mail ID" class="form-input">
+    </div>
+    <div class="input-box">
+        <span class="details">Password</span>
+        <input type="password" name="Password" placeholder="Password" class="form-input">
+    </div>
+    
+        <div class="button">
+        <button class="form-input" type="submit">Log in</button>
+       
+        </div>
+    </form>
+</div>
+   </div> 
+<hr>
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/myntra-logo.png" alt=""  style="height: 100px; width: 250px; margin-left: -80px">
+            <h4>Contact</h4>
+            <p><strong>Address: </strong>K R Tech park,7th MILE, Hosur road, Bangalore, India</p>
+            <p><strong>Phone/: </strong>80-61561999</p>
+            <p><strong>Hours: </strong> Open 24 hours</p>
+
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="img/pay/app.jpg" alt="">
+                <img src="img/pay/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="img/pay/pay.png" alt="">
+        </div>
+       
+        <div class="copyright">
+            <p class="text-white text-center">&copy; Copyright 2022 Myntra. All rights reserved &reg;</p>
+        </div>
+    </footer>
+    <script>
+        const scriptURL="https://script.google.com/macros/s/AKfycbzR8yZm_1DIjAoQHxhRFKrdxeTRjAA_F8NVnfloSkyH4XM6NFxu_owFPgy9n9BXtEgLJA/exec"
+        const form= document.forms['login-google-sheet']
+
+        form.addEventListener('submit', e=>{
+            e.preventDefault()
+            fetch(scriptURL,{
+                method: 'POST',
+                body: new FormData(form) 
+            })
+            .then(Response=> alert("Successfully Signed In"))
+            .catch(error=> console.error('Error!', error.message))
+
+        })
+
+    </script>
+</body>
+</html>
